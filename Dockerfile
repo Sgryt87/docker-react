@@ -8,6 +8,8 @@ RUN npm run build
 
 #2 phase
 FROM nginx
+#elasticbeanstalk port mapping
+EXPOSE 80
 #from #1 to #2, ngninx starts html by default
 COPY --from=builder /app/build /usr/share/nginx/html
 
